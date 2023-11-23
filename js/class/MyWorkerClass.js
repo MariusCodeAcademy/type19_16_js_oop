@@ -8,6 +8,13 @@ class MyWorker extends Employee {
     super(name, lastName);
     this.hourlyPay = dollarPerHour;
   }
+
+  // metoda work(howMany)
+
+  // metoda calPay
+  calcPay() {
+    console.log('skaiciuojam alga');
+  }
 }
 
 console.log('WorkerClass was loaded');
