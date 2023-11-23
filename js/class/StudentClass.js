@@ -10,6 +10,10 @@ class Student {
     this.#mathMarks = argMathMarks;
   }
 
+  get name() {
+    return this.#name;
+  }
+
   // getteris mathMarks
   get mathMarks() {
     return this.#mathMarks;
