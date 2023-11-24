@@ -35,14 +35,14 @@ class Freelancer extends Employee {
     // found.done = true;
     found.finishJob();
     console.log(`${this.firstName} atliko '${found.title}' darba`);
-    console.table(this.#jobs);
+    // console.table(this.#jobs);
   }
 
   // apskaiciuoti atlyginima
   calcPay() {
     // atrinkti pabaigtus darbus
     const baigtiDarbai = this.#jobs.filter((jobObj) => jobObj.done === true);
-    console.table(baigtiDarbai);
+    // console.table(baigtiDarbai);
     // sudeti ju suma
 
     let sum = 0;
@@ -51,11 +51,9 @@ class Freelancer extends Employee {
       sum += jobObj.amount;
     });
     // grazinti suma
-    console.log('sum ===', sum);
 
     // palikti darbu masyve tik nepabaigtus darbus
     const nebaigtiDarbai = this.#jobs.filter((jobObj) => jobObj.done !== true);
-    console.log('nebaigtiDarbai ===', nebaigtiDarbai);
     this.#jobs = nebaigtiDarbai;
     console.log(`-- ${this.firstName} ismoketi ${sum.toFixed(2)}eur`);
     return sum;
