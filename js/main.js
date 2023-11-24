@@ -43,4 +43,7 @@ const jobsArr = [
 // free1 freelanceriui priskirti Headeris darba
 free1.assingJob(jobsArr[1]);
 free1.assingJob(jobsArr[0]);
-free1.assingJob({ title: 'labai gerai', pinigu: 10000 });
+// free1.assingJob({ title: 'labai gerai', pinigu: 10000 });
+
+// free1 nori uzbaigti darba su id === "job_2"
+free1.completeAJob('job_2');
