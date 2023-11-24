@@ -25,8 +25,11 @@ formEl.addEventListener('submit', (event) => {
 // const em1 = new Employee('James', 'Bond');
 // console.log('em1 ===', em1);
 const wor1 = new MyWorker('Mike', 'Kurt', 10);
-// wor1.work(8);
-// wor1.work(8);
-// wor1.work(160);
+const wor2 = new MyWorker('James', 'Bond', 15);
+wor2.work(20);
+wor1.hourlyPay = 20;
+wor1.work(8);
+wor1.work(8);
+wor1.work(160);
 wor1.calcPay();
 console.log('wor1 ===', wor1);
