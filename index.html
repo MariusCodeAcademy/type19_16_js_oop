@@ -19,7 +19,13 @@
   <script src="js/class/MyWorkerClass.js" defer></script>
   <script src="js/class/JobClass.js" defer></script>
   <script src="js/class/FreelancerClass.js" defer></script>
-  <script src="js/main.js" defer></script>
+  <!-- <script src="js/main.js" defer></script> -->
+  <script src="js/app.js" defer></script>
+  <style>
+    .d-none {
+      display: none;
+    }
+  </style>
 </head>
 
 <body class="container">
@@ -28,6 +34,10 @@
   <form id="worker">
     <input type="text" id="name" name="name" placeholder="name"> <br>
     <input type="text" id="lastName" name="lastName" placeholder="lastName"> <br>
+    <select name="emplType" id="emplType">
+      <option value="myWorker">Worker</option>
+      <option value="freelancer">Freelancer</option>
+    </select>
     <input type="number" id="hourlyPay" name="hourlyPay" placeholder="hourlyPay"> <br>
     <button type="submit">Create</button>
   </form>
