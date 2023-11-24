@@ -65,4 +65,18 @@ darbuotojai[4].completeAJob(jobsArr[4].id);
 // sukti cikla per darbuotojai
 // su printFullName gaunam varda ir pavarde
 // su calcPay gaunam alga
-darbuotojai.forEach(() => {});
+console.log('-------------');
+// darbuotojai.forEach((emplObj) => {
+// emplObj.printFullName();
+// let alga = emplObj.calcPay();
+// console.log('alga ===', alga);
+// });
+
+// { name: 'James Band', pay: 400 }
+const algalapiai = darbuotojai.map((emplObj) => {
+  return {
+    name: emplObj.printFullName(),
+    pay: emplObj.calcPay(),
+  };
+});
+console.log('algalapiai ===', algalapiai);

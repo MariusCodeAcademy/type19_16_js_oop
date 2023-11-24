@@ -55,7 +55,7 @@ class Freelancer extends Employee {
     // palikti darbu masyve tik nepabaigtus darbus
     const nebaigtiDarbai = this.#jobs.filter((jobObj) => jobObj.done !== true);
     this.#jobs = nebaigtiDarbai;
-    console.log(`-- ${this.firstName} ismoketi ${sum.toFixed(2)}eur`);
+    // console.log(`-- ${this.firstName} ismoketi ${sum.toFixed(2)}eur`);
     return sum;
   }
 }
