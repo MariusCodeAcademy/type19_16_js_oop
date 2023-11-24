@@ -2,11 +2,15 @@
 console.log('Job.js file was loaded');
 
 class Job {
+  // pridedama prie pacios klases o ne prie individualaus objekto
+  static count = 0;
   id;
   title;
   amount;
   #done;
   constructor(jobTitle, jobAmount) {
+    Job.count++;
+    this.id = `job_${Job.count}`;
     this.title = jobTitle;
     this.amount = jobAmount;
     this.#done = false;
@@ -18,5 +22,6 @@ class Job {
   }
 }
 
-const j1 = new Job('Footeris', 200);
-console.log(' j1 ===', j1);
+const jobsArr = [new Job('Footeris', 200), new Job('Headeris', 300)];
+console.log('jobsArr ===', jobsArr);
+console.log('Job.count ===', Job.count);
