@@ -18,22 +18,53 @@ class Freelancer extends Employee {
       return;
     }
     this.#jobs.push(newJob);
-    console.log('this.#jobs ===', this.#jobs);
-    console.log(JSON.stringify(this.#jobs, null, 2));
+    // console.table(this.#jobs);
+    // console.log(JSON.stringify(this.#jobs, null, 2));
   }
 
   completeAJob(jobId) {
-    console.log('darbas baigtas');
     // ieskoti darbo su id 'jobId',
-    const found = this.#jobs.find(() => {});
-    console.log('found ===', found);
+    const found = this.#jobs.find((jobObj) => jobObj.id === jobId);
+    // console.log('found ===', found);
+    // pranesti jei neradom tokio darbo
+    if (found === undefined) {
+      console.warn('toks darba nerastas', jobId);
+      return;
+    }
     // radus iskviesti jam finishJob() metoda
+    // found.done = true;
+    found.finishJob();
+    console.log(`${this.firstName} atliko '${found.title}' darba`);
+    console.table(this.#jobs);
+  }
+
+  // apskaiciuoti atlyginima
+  calcPay() {
+    // atrinkti pabaigtus darbus
+    const baigtiDarbai = this.#jobs.filter((jobObj) => jobObj.done === true);
+    console.table(baigtiDarbai);
+    // sudeti ju suma
+
+    let sum = 0;
+    // TODO: pasidaryti su reduce
+    baigtiDarbai.forEach((jobObj) => {
+      sum += jobObj.amount;
+    });
+    // grazinti suma
+    console.log('sum ===', sum);
+
+    // palikti darbu masyve tik nepabaigtus darbus
+    const nebaigtiDarbai = this.#jobs.filter((jobObj) => jobObj.done !== true);
+    console.log('nebaigtiDarbai ===', nebaigtiDarbai);
+    this.#jobs = nebaigtiDarbai;
+    console.log(`-- ${this.firstName} ismoketi ${sum.toFixed(2)}eur`);
+    return sum;
   }
 }
 // prideti tuscia darbu masyva
 // sukurti 2 freelancerius
 
-const jobsARR = [
+let jobs = [
   {
     id: 'job_2',
     title: 'Headeris',
@@ -47,3 +78,4 @@ const jobsARR = [
     done: false,
   },
 ];
+jobs = jobs.filter((jObj) => jObj.title === 'Headeris');

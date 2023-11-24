@@ -26,12 +26,12 @@ formEl.addEventListener('submit', (event) => {
 // console.log('em1 ===', em1);
 const wor1 = new MyWorker('Mike', 'Kurt', 10);
 const wor2 = new MyWorker('James', 'Bond', 15);
-console.log('wor1 ===', wor1);
+// console.log('wor1 ===', wor1);
 
 const free1 = new Freelancer('Jane', 'Dow');
 console.log('free1 ===', free1);
 // free1.calcPay();
-free1.printFullName();
+// free1.printFullName();
 
 const jobsArr = [
   new Job('Footeris', 200),
@@ -43,7 +43,13 @@ const jobsArr = [
 // free1 freelanceriui priskirti Headeris darba
 free1.assingJob(jobsArr[1]);
 free1.assingJob(jobsArr[0]);
+free1.assingJob(jobsArr[2]);
+free1.assingJob(jobsArr[3]);
 // free1.assingJob({ title: 'labai gerai', pinigu: 10000 });
 
 // free1 nori uzbaigti darba su id === "job_2"
-free1.completeAJob('job_2');
+free1.completeAJob('job_1');
+free1.completeAJob('job_3');
+
+free1.calcPay();
+console.log('free1 ===', free1);

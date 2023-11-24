@@ -16,6 +16,11 @@ class Job {
     this.#done = false;
   }
 
+  // getteris done statusui
+  get done() {
+    return this.#done;
+  }
+
   // kai norim uzbaigti darba
   finishJob() {
     this.#done = true;
