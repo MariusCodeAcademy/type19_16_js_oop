@@ -22,6 +22,6 @@ class Job {
   }
 }
 
-const jobsArr = [new Job('Footeris', 200), new Job('Headeris', 300)];
-console.log('jobsArr ===', jobsArr);
-console.log('Job.count ===', Job.count);
+// const jobsArr = [new Job('Footeris', 200), new Job('Headeris', 300)];
+// console.log('jobsArr ===', jobsArr);
+// console.log('Job.count ===', Job.count);
